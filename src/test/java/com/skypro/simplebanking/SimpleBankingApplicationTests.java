@@ -20,11 +20,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 class SimpleBankingApplicationTests {
-    @RunWith(SpringRunner.class)
-    @SpringBootTest
-    @AutoConfigureMockMvc
-    @Testcontainers
-    public class AdminUserCreationIntegrationTest {
 
         @Autowired
         private MockMvc mockMvc;
@@ -54,7 +49,7 @@ class SimpleBankingApplicationTests {
                             .content("{\"username\": \"newUser\", \"password\": \"newPassword\"}"))
                     .andExpect(status().isForbidden()); // Ожидаемый HTTP-статус 403 (доступ запрещен)
         }
-    }
+
 
     @RunWith(SpringRunner.class)
     @SpringBootTest
